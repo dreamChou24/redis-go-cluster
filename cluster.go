@@ -138,6 +138,7 @@ func (cluster *Cluster) Do(cmd string, args ...interface{}) (interface{}, error)
 	if cmd == "MGET" {
 		return cluster.multiGet(cmd, args...)
 	}
+        // add special command mset, mget, msetnx by multi. zhouj end
 
 	node, err := cluster.ChooseNodeWithCmd(cmd, args...)
 	if err != nil {
